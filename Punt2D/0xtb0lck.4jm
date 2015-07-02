@@ -1,0 +1,75 @@
+#ifndef __TREEG__H_
+#define __TREEG__H_
+
+#include "List2P.h"
+
+template <class Type>
+struct nodeT{
+public: 
+	Type data;
+	nodeT<Type>* parent;
+	List2P<Type> child;
+	
+};
+
+
+template <class Type>
+class TreeG{
+public:
+	nodeT<Type>* rootNode;
+
+	TreeG(){ rootNode = NULL; }
+	TreeG(const Type& _data){ rootNode->data = _data; rootNode->parent = NULL; }
+	
+
+	nodeT<Type>* Add(const Type& data, nodeT<Type>* _parent){
+		nodeT<Type>*item = new nodeT<Type>;
+		if (_parent)
+		{
+			item->parent = _parent;
+		}
+		else
+		{
+			rootNode = item;
+			item->parent = NULL;
+		}
+		item->data = data;
+		item->child = NULL;
+
+		parent->child.Add(item);
+
+		return *this;
+	}
+
+
+	nodeT<Type>* Add(const Type& data){
+		nodeT<Type>* item = new nodeT<Type>;
+
+		item->parent = this;
+		item->data = _data;
+
+		this->child = item;
+
+		return *item;
+	}
+
+	void VisitAllNodes(List2P<Type>* list) const{
+
+		nodeT<Type>* item = rootNode;
+		list->Add(rootNode->data);
+
+		for (int i = 0; i < item->child.Count(); i++)
+		{
+			if (item->child[i]->data)
+				list->Add(item->child[i]->data);
+			else
+				VisitAllNodes(item->child[i]);
+
+		}
+	}
+
+};
+
+
+#endif // !__TREEG__H_
+
