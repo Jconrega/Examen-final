@@ -1,6 +1,7 @@
 #include "Utilities.h"
-#include "TreeG.h"
 #include <stdio.h>
+
+#define TEST(a) (a) ? LOG("Test: " #a " SUCCESS"): LOG("Test: " #a " FAILURE");
 
 int fibonacci(int n)
 {

@@ -250,7 +250,7 @@
 
 		for (; i + first_number < len; i++)
 		{
-			strng[second_number + i] = strng[Ri + i + 1];
+			strng[second_number + i] = strng[first_number + i + 1];
 		}
 
 		if (first_number != 0)

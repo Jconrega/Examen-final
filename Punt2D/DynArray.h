@@ -128,10 +128,10 @@ class DynArray{
 		const DynArray<Type>& operator += (const DynArray<Type>& b)
 		{
 			
-			if (numElements + array.numElements > allocatedMemory)
-				Alloc(numElements + array.numElements);
-			for (unsigned int i = 0; i < array.numElements; ++i)
-				data[numElements++] = array.data[i];
+			if (numElements + b.numElements > allocatedMemory)
+				Alloc(numElements + b.numElements);
+			for (unsigned int i = 0; i < b.numElements; ++i)
+				data[numElements++] = b.data[i];
 			return(*this);
 		}
 
