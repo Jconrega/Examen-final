@@ -53,6 +53,7 @@ public:
 
 	void Cut(unsigned int first_number, unsigned int second_number);
 
+	unsigned int DoubleVocals();
 
 	
 private:

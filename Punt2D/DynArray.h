@@ -129,7 +129,7 @@ class DynArray{
 		{
 			
 			if (numElements + b.numElements > allocatedMemory)
-				Alloc(numElements + b.numElements);
+				Reallocate(numElements + b.numElements);
 			for (unsigned int i = 0; i < b.numElements; ++i)
 				data[numElements++] = b.data[i];
 			return(*this);

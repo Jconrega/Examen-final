@@ -276,27 +276,19 @@
 
 		sizeMemory = Length() + coincidencies;
 
-		NewString(sizeMemory);
-
-		char *tmp = new char[sizeMemory];
-
-		for (unsigned int i = 0; i < len; i++)
+		for (unsigned int i = 0; i < sizeMemory; i++)
 		{
-			unsigned int cont = 0;
-			tmp[cont] = strng[i];
-
 			if (strng[i] == 'a' || strng[i] == 'A' || strng[i] == 'e' || strng[i] == 'E' || strng[i] == 'i' || strng[i] == 'I' || strng[i] == 'o' || strng[i] == 'O' || strng[i] == 'u' || strng[i] == 'U')
 			{
-				tmp[cont + 1] = strng[i];
-				cont++;
+
+				for (unsigned int j = len; j>i+1; j--)
+				{
+					strng[j + 1] = strng[j];
+				}
+
+				strng[i + 1] = strng[i]; 
 			}
-			cont++;
-			
 		}
-
-		strcpy_s(strng, sizeMemory, tmp);
-
-		delete[] tmp;
 
 		return coincidencies;
 	}

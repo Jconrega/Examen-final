@@ -1,0 +1,29 @@
+#ifndef _RECTANGLE_H_
+#define _RECTANGLE_H_
+
+#include <math.h>
+#include "Point2DTemplate.h"
+
+template<class Type>
+
+class Rectangle
+{
+	public:
+		Point2DTemplate<Type> position;
+		Type w, h;
+
+		Rectangle(Type position_x, Type position_y, Type w_, Type h_){ position.x = position_x; position.y = position_y; w = w_; h = h_; }
+		~Rectangle();
+
+		int GetArea()
+		{
+			return h * w;
+		}
+
+		bool Intersects(Rectangle<Type>& squr)
+		{
+
+		}
+
+};
+#endif // !_RECTANGLE_H_

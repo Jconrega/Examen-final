@@ -22,9 +22,10 @@ int main(int argc, char** args)
 	TEST(r2.GetArea() == 2000);
 	TEST(r2.Intersects(r) == true);*/
 
-	String s("Hola Mundo");
+	String s("Hola Munda");
 	TEST(s.DoubleVocals() == 4);
-	TEST(s == "Hoolaa Muundoo");
+	printf(s.GetString());
+	//TEST(s == "Hoolaa Muundoo");
 
 	system("pause");
 	return 0;

@@ -78,6 +78,7 @@
     <ClInclude Include="Point2DTemplate.h" />
     <ClInclude Include="Qeue.h" />
     <ClInclude Include="Queue2DynArr.h" />
+    <ClInclude Include="p2Rectangle.h" />
     <ClInclude Include="Stack.h" />
     <ClInclude Include="StackList.h" />
     <ClInclude Include="String.h" />

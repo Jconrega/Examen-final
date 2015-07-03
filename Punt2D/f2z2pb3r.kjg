@@ -276,11 +276,9 @@
 
 		sizeMemory = Length() + coincidencies;
 
-		NewString(sizeMemory);
-
 		char *tmp = new char[sizeMemory];
 
-		for (unsigned int i = 0; i < len; i++)
+		for (unsigned int i = 0; i < sizeMemory; i++)
 		{
 			unsigned int cont = 0;
 			tmp[cont] = strng[i];
@@ -294,9 +292,7 @@
 			
 		}
 
-		strcpy_s(strng, sizeMemory, tmp);
-
-		delete[] tmp;
+		//strcpy_s(strng, sizeMemory, tmp);
 
 		return coincidencies;
 	}
